@@ -65,6 +65,10 @@ endif
 " General appearance colors:
 " (some of them may be unused)
 
+" hi Folded NONE | hi Folded cterm=italic ctermfg=246 ctermbg=235 gui=italic guifg=#999999 guibg=#252535
+let s:cdFoldedFg = {'gui': '#999999', 'cterm': '246', 'cterm256': '246'}
+let s:cdFoldedBg = {'gui': '#252535', 'cterm': '235', 'cterm256': '235'}
+
 let s:cdNone = {'gui': 'NONE', 'cterm': 'NONE', 'cterm256': 'NONE'}
 let s:cdFront = {'gui': '#D4D4D4', 'cterm': s:cterm05, 'cterm256': '188'}
 let s:cdBack = {'gui': '#1E1E1E', 'cterm': s:cterm00, 'cterm256': '234'}
@@ -140,7 +144,7 @@ call <sid>hi('DiffText', {}, s:cdDiffRedLight, 'none', {})
 call <sid>hi('EndOfBuffer', s:cdLineNumber, s:cdBack, 'none', {})
 call <sid>hi('ErrorMsg', s:cdRed, s:cdBack, 'none', {})
 call <sid>hi('VertSplit', s:cdSplitDark, s:cdBack, 'none', {})
-call <sid>hi('Folded', s:cdLeftLight, s:cdLeftDark, 'underline', {})
+call <sid>hi('Folded', s:cdFoldedFg, s:cdFoldedBg, 'italic', {})
 call <sid>hi('FoldColumn', s:cdLineNumber, s:cdBack, 'none', {})
 call <sid>hi('SignColumn', {}, s:cdBack, 'none', {})
 call <sid>hi('IncSearch', s:cdNone, s:cdSearchCurrent, 'none', {})
